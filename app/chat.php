@@ -6,11 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 class chat extends Model
 {
     //
-    protected $fillable = ['message',
-    ];
+    protected $fillable = ['message'];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    
+	/**
+	 * A message belong to a user
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
+	public function user()
+	{
+	  return $this->belongsTo(User::class);
+	}
 }

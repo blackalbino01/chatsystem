@@ -37,8 +37,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
+    /**
+     * A user can have many messages
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function chats()
     {
-        return $this->hasMany(chat::class);
+      return $this->hasMany(chat::class);
     }
 }

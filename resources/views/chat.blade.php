@@ -21,20 +21,24 @@
 </head>
 <body>
     <style type="text/css">
-        html, body {
-          background-image:url("{{asset('img/home.jpg')}}");
-          background-repeat: repeat-y;
-          width:100%;
+      html, body {
+        background-image:url("{{asset('img/home.jpg')}}");
+        background-repeat: repeat-y;
+        width:100%;
         }
-        h2{
-          color:white;
-        }
-        span{
+      h2{
+        color:white;
+      }
+      label{
+        color:white;
+      }
+      span{
         color:#673ab7;
         font-weight:bold;
       }
-      .container {
+      .content {
         margin-top: 3%;
+        margin-left: 20%;
         width: 60%;
         background-color: #26262b9e;
         padding-right:10%;
@@ -42,6 +46,8 @@
       }
       .btn-primary {
         background-color: #673AB7;
+        margin-left: -20px;
+        bottom: 10px;
       }
       .display-chat{
         height:300px;
@@ -111,26 +117,30 @@
         </nav>
 
         <main class="py-4">
-            <div class="container">
+            <div class="content">
                 <center><h2>Welcome <span style="color:#dd7ff3;">{{ Auth::user()->name }}!</span></h2>
                 <label>Join the chat</label>
                 </center></br>
                 <div class="display-chat">
+                  @foreach($ch as $c)
                   <div class="message">
                     <p>
                       <span>{{ Auth::user()->name }}:</span>
+                      {{$c->message}}
                     </p>
                   </div>
+                  @endforeach
                 </div>
                 <form class="form-horizontal" method="post" action="{{route('send')}}">
                   @csrf
                   <div class="form-group">
-                    <div class="col-sm-10">          
-                      <textarea name="message" class="form-control" placeholder="Type your message here..."></textarea>
-                    </div>
-                         
-                    <div class="col-sm-2">
-                      <button type="submit" class="btn btn-primary">Send</button>
+                    <div class="row" style="margin-bottom: 20px;">
+                      <div class="col-sm-10">          
+                        <textarea name="message" class="form-control" placeholder="Type your message here..."></textarea>
+                      </div>
+                      <div class="col-sm-2">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                      </div>
                     </div>
 
                   </div>

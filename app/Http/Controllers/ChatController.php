@@ -24,16 +24,16 @@ class ChatController extends Controller
 
     public function home()
     {
-    	$user = User::all();
-    	return view('home',compact('user'));
+    	return view('home');
     }
-    public function chat()
+    public function chat($user_id)
     {
         $chats = User::with('chats')->get();
-        echo $chats;
-        return;
+        foreach($chats as $chat) {
+           $ch = $chat->chats;
+        }
+        return view('chat',compact('ch'));
     }
-
     /**
      * Persist message to database
      *

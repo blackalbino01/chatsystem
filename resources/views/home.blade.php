@@ -21,10 +21,8 @@
     <center>
         <h2>
             Welcome 
-            <span>
-                @foreach($user as $us)
-                    {{$us->name}}
-                @endforeach!
+            <span style="font-weight: 700;">
+              {{Auth::user()->name}}!
             </span>
         </h2>
         <br><br>

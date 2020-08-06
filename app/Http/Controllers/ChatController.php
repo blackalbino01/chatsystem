@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
 use App\User;
 
 use App\chat;
@@ -27,7 +29,9 @@ class ChatController extends Controller
     }
     public function chat()
     {
-      return chat::with('user')->get();
+        $chats = User::with('chats')->get();
+        echo $chats;
+        return;
     }
 
     /**

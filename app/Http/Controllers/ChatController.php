@@ -26,7 +26,7 @@ class ChatController extends Controller
     {
     	return view('home');
     }
-    public function chat($user_id)
+    public function chat()
     {
         $chats = User::with('chats')->get();
         foreach($chats as $chat) {

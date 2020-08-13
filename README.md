@@ -1,9 +1,9 @@
 ## Clone GitHub repo for this project locally
 
-```git clone https://github.com/blackalbino01/SimpleBlog```
+```git clone https://github.com/blackalbino01/chatsystem```
 ## cd into the project
 
-```cd SimpleBlog```
+```cd chatsystem```
 ## Install Composer Dependencies
 
 ```composer install```

@@ -12,13 +12,10 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-image:url("{{asset('img/home.jpg')}}");
-                background-repeat: repeat-y;
-                width:100%;
+                background-image:url("{{asset('img/home.jpg')}}") center center cover no-repeat fixed;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
-                height: 100vh;
                 margin: 0;
             }
 

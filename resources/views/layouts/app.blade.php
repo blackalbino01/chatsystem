@@ -22,9 +22,7 @@
 <body>
     <style type="text/css">
          html, body {
-                background-image:url("{{asset('img/home.jpg')}}");
-                background-repeat: repeat-y;
-                width:100%;
+                background-image:url("{{asset('img/home.jpg')}}") center center cover no-repeat fixed;
             }
     </style>
     <div id="app">

@@ -2,8 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        
         <title>dconnect</title>
 
         <!-- Fonts -->
@@ -12,7 +13,10 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-image:url("{{asset('img/home.jpg')}}") center center cover no-repeat fixed;
+                background-image:url("{{asset('img/home.jpg')}}");
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
